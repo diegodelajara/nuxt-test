@@ -19,7 +19,8 @@ module.exports = {
     '~/plugins/theme.js'
   ],
   css: [
-    '~/assets/style/style.css'
+    '~/assets/style/style.css',
+    '~/styles/index.scss'
   ],
   /*
   ** Customize the progress bar color
