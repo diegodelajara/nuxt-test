@@ -98,3 +98,10 @@
     }
   }
 </script>
+
+<style>
+  .theme--dark.v-list {
+    background-color: rgba(0,0,0,.5) !important;
+    color: #fff;
+  }
+</style>

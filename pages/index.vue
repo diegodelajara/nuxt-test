@@ -6,6 +6,8 @@
 
     <core-drawer />
 
+    <core-view />
+
   </v-app>
 </template>
 
@@ -13,12 +15,14 @@
 	import CoreFilter  from '../components/core/Filter'
 	import CoreToolbar  from '../components/core/Toolbar'
 	import CoreDrawer  from '../components/core/Drawer.vue'
+	import CoreView  from '../components/core/View.vue'
 
 	export default {
 		components: {
 			CoreFilter,
 			CoreToolbar,
-			CoreDrawer
+			CoreDrawer,
+			CoreView
 		}
 	}
 </script>

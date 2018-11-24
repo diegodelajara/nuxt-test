@@ -1,5 +1,5 @@
 <template>
-  <!--v-navigation-drawer
+  <v-navigation-drawer
     id="app-drawer"
     v-model="inputValue"
     app
@@ -8,21 +8,10 @@
     persistent
     mobile-break-point="991"
     width="260"
-  -->
-  <v-navigation-drawer
-    id="app-drawer"
-    app
-    dark
-    floating
-    persistent
-    mobile-break-point="991"
-    width="260">
+  >
 
-    <!--v-img
-      :src="image"
-      height="100%"
-    -->
     <v-img
+      :src="image"
       height="100%"
     >
       <v-layout
@@ -34,11 +23,11 @@
           <v-list-tile-avatar
             color="white"
           >
-            <!--v-img
+            <v-img
               :src="logo"
               height="34"
               contain
-            /-->
+            />
             <v-img
               height="34"
               contain
@@ -49,7 +38,7 @@
           </v-list-tile-title>
         </v-list-tile>
         <v-divider/>
-        <!--v-list-tile
+        <v-list-tile
           v-if="responsive"
         >
           <v-text-field
@@ -57,7 +46,7 @@
             label="Search..."
             color="purple"
           />
-        </v-list-tile-->
+        </v-list-tile>
 
         <v-list-tile>
           <v-text-field
@@ -67,7 +56,7 @@
           />
         </v-list-tile>
 
-        <!--v-list-tile
+        <v-list-tile
           v-for="(link, i) in links"
           :key="i"
           :to="link.to"
@@ -81,7 +70,7 @@
           <v-list-tile-title
             v-text="link.text"
           />
-        </v-list-tile-->
+        </v-list-tile>
 
         <v-list-tile
           disabled
@@ -98,16 +87,13 @@
   </v-navigation-drawer>
 </template>
 
-<!--script>
+<script>
 // Utilities
-import {
-  mapMutations,
-  mapState
-} from 'vuex'
+import { mapMutations, mapState } from 'vuex'
 
 export default {
   data: () => ({
-    logo: './img/vuetifylogo.png',
+    logo: '',
     links: [
       {
         to: '/dashboard',
@@ -179,28 +165,25 @@ export default {
     }
   }
 }
-</script-->
+</script>
 
-<!--style lang="scss">
-  #app-drawer {
-    .v-list__tile {
-      border-radius: 4px;
+<style>
+  #app-drawer .v-list__tile {
+  border-radius: 4px;
+}
+#app-drawer .v-list__tile--buy {
+  margin-top: auto;
+  margin-bottom: 17px;
+}
+#app-drawer .v-image__image--contain {
+  top: 9px;
+  height: 60%;
+}
+#app-drawer .search-input {
+  margin-bottom: 30px !important;
+  padding-left: 15px;
+  padding-right: 15px;
+}
 
-      &--buy {
-        margin-top: auto;
-        margin-bottom: 17px;
-      }
-    }
+</style>
 
-    .v-image__image--contain {
-      top: 9px;
-      height: 60%;
-    }
-
-    .search-input {
-      margin-bottom: 30px !important;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-  }
-</style-->
