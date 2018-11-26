@@ -12,6 +12,7 @@
       >
         <material-chart-card
           :data="dailySalesChart.data"
+          :options="dailySalesChart.options"
           color="info"
           type="Line"
         >
@@ -45,6 +46,8 @@
       >
         <material-chart-card
           :data="emailsSubscriptionChart.data"
+          :options="emailsSubscriptionChart.options"
+          :responsive-options="emailsSubscriptionChart.responsiveOptions"
           color="red"
           type="Bar"
         >
@@ -69,6 +72,7 @@
       >
         <material-chart-card
           :data="dataCompletedTasksChart.data"
+          :options="dataCompletedTasksChart.options"
           color="green"
           type="Line"
         >
@@ -367,6 +371,9 @@ export default {
           ]
         },
         options: {
+          lineSmooth: this.$chartist.Interpolation.cardinal({
+            tension: 0
+          }),
           low: 0,
           high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
           chartPadding: {
@@ -385,6 +392,9 @@ export default {
           ]
         },
         options: {
+          lineSmooth: this.$chartist.Interpolation.cardinal({
+            tension: 0
+          }),
           low: 0,
           high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
           chartPadding: {
