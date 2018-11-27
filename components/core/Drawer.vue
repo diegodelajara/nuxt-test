@@ -111,7 +111,7 @@ export default {
     links: [
       {
         to: '/',
-        icon: 'fas fa-search',
+        icon: 'mdi-view-dashboard',
         text: 'Dashboard'
       },
       {

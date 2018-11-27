@@ -23,10 +23,6 @@
   import CoreToolbar  from '../components/core/Toolbar'
   import CoreDrawer  from '../components/core/Drawer'
   import CoreView  from '../components/core/View'
-  import Card from '../components/material/Card'
-  import StatsCard from '../components/material/StatsCard'
-  import ChartCard from '../components/material/ChartCard'
-  import Notification from '../components/material/Notification'
 
 
   export default {
@@ -34,11 +30,7 @@
       CoreFilter,
       CoreToolbar,
       CoreDrawer,
-      CoreView,
-      Card,
-      StatsCard,
-      ChartCard,
-      Notification
+      CoreView
     }
   }
 </script>
