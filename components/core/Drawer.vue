@@ -9,7 +9,19 @@
     mobile-break-point="991"
     width="260"
   >
+<v-layout align-center justify-space-around>
+    <v-icon>fas fa-lock</v-icon>
 
+    <v-icon>fas fa-search</v-icon>
+
+    <v-icon>fas fa-list</v-icon>
+
+    <v-icon>fas fa-edit</v-icon>
+
+    <v-icon>fas fa-tachometer-alt</v-icon>
+
+    <v-icon>fas fa-circle-notch fa-spin</v-icon>
+  </v-layout>
     <v-img
       :src="image"
       height="100%"
@@ -34,7 +46,7 @@
             />
           </v-list-tile-avatar>
           <v-list-tile-title class="title">
-            Vuetify MD
+            Covit
           </v-list-tile-title>
         </v-list-tile>
         <v-divider/>
@@ -84,6 +96,8 @@
         </v-list-tile>
       </v-layout>
     </v-img>
+
+    
   </v-navigation-drawer>
 </template>
 
@@ -96,8 +110,8 @@ export default {
     logo: '',
     links: [
       {
-        to: '/dashboard',
-        icon: 'mdi-view-dashboard',
+        to: '/',
+        icon: 'fas fa-search',
         text: 'Dashboard'
       },
       {

@@ -1,12 +1,18 @@
 <template>
   <v-app>
-    <core-filter />
-
-    <core-toolbar />
-
-    <core-drawer />
-
-    <core-view />
+    <no-ssr>
+      <core-filter />
+    </no-ssr>
+    
+    <no-ssr>
+        <core-toolbar />
+    </no-ssr>
+    <no-ssr>
+        <core-drawer />
+    </no-ssr>
+    <no-ssr>
+      <core-view />
+    </no-ssr>
 
 
   </v-app>
@@ -15,15 +21,24 @@
 <script>
   import CoreFilter  from '../components/core/Filter'
   import CoreToolbar  from '../components/core/Toolbar'
-  import CoreDrawer  from '../components/core/Drawer.vue'
-  import CoreView  from '../components/core/View.vue'
+  import CoreDrawer  from '../components/core/Drawer'
+  import CoreView  from '../components/core/View'
+  import Card from '../components/material/Card'
+  import StatsCard from '../components/material/StatsCard'
+  import ChartCard from '../components/material/ChartCard'
+  import Notification from '../components/material/Notification'
+
 
   export default {
     components: {
       CoreFilter,
       CoreToolbar,
       CoreDrawer,
-      CoreView
+      CoreView,
+      Card,
+      StatsCard,
+      ChartCard,
+      Notification
     }
   }
 </script>

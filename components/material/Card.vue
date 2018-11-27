@@ -107,12 +107,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-  .v-card--material {
-    &__header {
-      &.v-card {
-        border-radius: 4px;
-      }
-    }
-  }
-</style>
+

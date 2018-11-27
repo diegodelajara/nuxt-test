@@ -15,7 +15,10 @@ module.exports = {
     ]
   },
   plugins: [
-    '~/plugins'
+    { src: '~/plugins/axios.js' },
+    { src: '~/plugins/chartist' },
+    { src: '~/plugins/theme.js' },
+    { src: '~/plugins/vuetify.js' }
   ],
   css: [
     '~/assets/style/style.css',
@@ -35,6 +38,7 @@ module.exports = {
   ** Build configuration
   */
   modules: [
-      ['@nuxtjs/pwa', { icon: true }]
+      ['@nuxtjs/pwa', { icon: true }],
+      ['nuxt-material-design-icons']
   ]
 }
