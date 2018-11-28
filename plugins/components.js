@@ -6,7 +6,7 @@ import Notification from '../components/material/Notification'
 import Helper from '../components/helper/Offset'
 
 Vue.component('material-card', Card)
-Vue.component('material-state-card', StatsCard)
+Vue.component('material-stats-card', StatsCard)
 Vue.component('material-chart-card', ChartCard)
 Vue.component('notification', Notification)
 Vue.component('helper-offset', Helper)
