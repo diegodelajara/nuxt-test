@@ -80,23 +80,24 @@
             <v-icon>{{ link.icon }}</v-icon>
           </v-list-tile-action>
 
-          <v-expansion-panel>
+          <v-expansion-panel v-if="link.children">
             <v-expansion-panel-content>
               <div slot="header">{{ link.name }}</div>
               <v-card>
-                <v-card-text v-if="link.children">
+                <v-card-text>
                   <ul>
                     <li v-for="(child, i) in link.children" :key="i">
                       {{ child.name }}
                     </li>
                   </ul>
                 </v-card-text>
-                <v-card-text v-else>
-                  none
-                </v-card-text>
               </v-card>
             </v-expansion-panel-content>
           </v-expansion-panel>
+
+          <div v-else>
+            <div slot="header">{{ link.name }}</div>
+          </div>
         </v-list-tile>
       </v-layout>
     </v-img>
