@@ -16,7 +16,7 @@ module.exports = {
   },
   plugins: [
     { src: '~/plugins/axios.js' },
-    { src: '~/plugins/chartist.js' },
+    { src: '~/plugins/chartist.js', ssr: false },
     { src: '~/plugins/vuetify.js' },
     { src: '~/plugins/components.js' }
   ],

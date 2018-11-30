@@ -54,11 +54,6 @@
         <v-list-tile
           v-if="responsive"
         >
-          <v-text-field
-            class="purple-input search-input"
-            label="Search..."
-            color="purple"
-          />
         </v-list-tile>
 
         <v-list-tile>
@@ -96,7 +91,7 @@
           </v-expansion-panel>
 
           <div v-else>
-            <div slot="header">{{ link.name }}</div>
+            <div class="no-expansion-item" slot="header">{{ link.name }}</div>
           </div>
         </v-list-tile>
       </v-layout>
