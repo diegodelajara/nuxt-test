@@ -10,12 +10,7 @@
 </template>
 
 <script>
-import CoreFooter from './Footer.vue'
-
 export default {
-  components: {
-    CoreFooter
-  },
   metaInfo () {
     return {
       title: 'Vuetify Material Dashboard by CreativeTim'
