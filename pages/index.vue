@@ -356,6 +356,12 @@ export default {
       dailySalesChart: {
         data: {
           labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+          chart: {
+            type: 'pie'
+          },
+          title: {
+            text: 'Ingresos'
+          },
           series: [{
             data: [12, 17, 7, 17, 23, 18, 38]
           }]
@@ -375,6 +381,12 @@ export default {
       dataCompletedTasksChart: {
         data: {
           labels: ['12am', '3pm', '6pm', '9pm', '12pm', '3am', '6am', '9am'],
+          chart: {
+            type: 'pie'
+          },
+          title: {
+            text: 'Egresos'
+          },
           series: [{
             data:[230, 750, 450, 300, 280, 240, 200, 190]
           }]
@@ -394,6 +406,12 @@ export default {
       emailsSubscriptionChart: {
         data: {
           labels: ['Ja', 'Fe', 'Ma', 'Ap', 'Mai', 'Ju', 'Jul', 'Au', 'Se', 'Oc', 'No', 'De'],
+          chart: {
+            type: 'spline'
+          },
+          title: {
+            text: 'Gastos comunes'
+          },
           series: [{
             data: [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]
           }]
