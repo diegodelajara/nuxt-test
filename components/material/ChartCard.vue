@@ -4,7 +4,7 @@
     class="v-card--material-chart"
     v-on="$listeners"
   >
-    <chartist
+    <!--chartist
       slot="header"
       :data="data"
       :event-handlers="eventHandlers"
@@ -12,7 +12,8 @@
       :ratio="ratio"
       :responsive-options="responsiveOptions"
       :type="type"
-    />
+    /-->
+    <highcharts :options="options"></highcharts>
 
     <slot />
 
@@ -28,30 +29,9 @@ export default {
   inheritAttrs: false,
 
   props: {
-    data: {
-      type: Object,
-      default: () => ({})
-    },
-    eventHandlers: {
-      type: Array,
-      default: () => ([])
-    },
     options: {
       type: Object,
       default: () => ({})
-    },
-    ratio: {
-      type: String,
-      default: undefined
-    },
-    responsiveOptions: {
-      type: Array,
-      default: () => ([])
-    },
-    type: {
-      type: String,
-      required: true,
-      validator: v => ['Bar', 'Line', 'Pie'].includes(v)
     }
   }
 }

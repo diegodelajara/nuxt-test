@@ -15,10 +15,10 @@ module.exports = {
     ]
   },
   plugins: [
+    { src: '~/plugins/components.js' },
     { src: '~/plugins/axios.js' },
-    { src: '~/plugins/chartist.js', ssr: false },
+    { src: '~/plugins/highcharts.js' },
     { src: '~/plugins/vuetify.js' },
-    { src: '~/plugins/components.js' }
   ],
   css: [
     '~/assets/style/style.css',

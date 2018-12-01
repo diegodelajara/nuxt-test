@@ -11,10 +11,7 @@
         lg4
       >
         <material-chart-card
-          :data="dailySalesChart.data"
-          :options="dailySalesChart.options"
-          color="info"
-          type="Line"
+          :options="dailySalesChart.data"
         >
           <h4 class="title font-weight-light">Daily Sales</h4>
           <p class="category d-inline-flex font-weight-light">
@@ -45,11 +42,7 @@
         lg4
       >
         <material-chart-card
-          :data="emailsSubscriptionChart.data"
-          :options="emailsSubscriptionChart.options"
-          :responsive-options="emailsSubscriptionChart.responsiveOptions"
-          color="red"
-          type="Bar"
+          :options="emailsSubscriptionChart.data"
         >
           <h4 class="title font-weight-light">Email Subscription</h4>
           <p class="category d-inline-flex font-weight-light">Last Campaign Performance</p>
@@ -71,10 +64,7 @@
         lg4
       >
         <material-chart-card
-          :data="dataCompletedTasksChart.data"
-          :options="dataCompletedTasksChart.options"
-          color="green"
-          type="Line"
+          :options="dataCompletedTasksChart.data"
         >
           <h3 class="title font-weight-light">Completed Tasks</h3>
           <p class="category d-inline-flex font-weight-light">Last Last Campaign Performance</p>
@@ -366,9 +356,9 @@ export default {
       dailySalesChart: {
         data: {
           labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-          series: [
-            [12, 17, 7, 17, 23, 18, 38]
-          ]
+          series: [{
+            data: [12, 17, 7, 17, 23, 18, 38]
+          }]
         },
         options: {
           
@@ -385,9 +375,9 @@ export default {
       dataCompletedTasksChart: {
         data: {
           labels: ['12am', '3pm', '6pm', '9pm', '12pm', '3am', '6am', '9am'],
-          series: [
-            [230, 750, 450, 300, 280, 240, 200, 190]
-          ]
+          series: [{
+            data:[230, 750, 450, 300, 280, 240, 200, 190]
+          }]
         },
         options: {
           
@@ -404,10 +394,9 @@ export default {
       emailsSubscriptionChart: {
         data: {
           labels: ['Ja', 'Fe', 'Ma', 'Ap', 'Mai', 'Ju', 'Jul', 'Au', 'Se', 'Oc', 'No', 'De'],
-          series: [
-            [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]
-
-          ]
+          series: [{
+            data: [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]
+          }]
         },
         options: {
           axisX: {
