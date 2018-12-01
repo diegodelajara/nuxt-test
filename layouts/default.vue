@@ -24,10 +24,10 @@
   import CoreDrawer  from '../components/core/Drawer'
   import CoreView  from '../components/core/View'
 
-  import Card  from '../components/material/Card'
-  import StatsCard  from '../components/material/StatsCard.vue'
-  import ChartCard  from '../components/material/ChartCard.vue'
-  import materialNotification  from '../components/material/Notification.vue'
+  import MaterialCard  from '../components/material/Card'
+  import MaterialStatsCard  from '../components/material/StatsCard.vue'
+  import MaterialChartCard  from '../components/material/ChartCard.vue'
+  import MaterialNotification  from '../components/material/Notification.vue'
 
 
   export default {
@@ -36,7 +36,10 @@
       CoreToolbar,
       CoreDrawer,
       CoreView,
-      materialNotification
+      MaterialCard,
+      MaterialStatsCard,
+      MaterialChartCard,
+      MaterialNotification
     }
   }
 </script>
