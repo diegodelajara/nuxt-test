@@ -1,4 +1,4 @@
-# covit-vuetify
+# nuxt-vuetify
 
 > Nuxt.js + Vuetify.js project
 
