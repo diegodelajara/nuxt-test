@@ -27,7 +27,7 @@
           <v-flex xs12>
             <div class="text-xs-center body-2 text-uppercase sidebar-filter">Sidebar Filters</div>
 
-            <!--v-layout justify-center>
+            <v-layout justify-center>
               <v-avatar
                 v-for="c in colors"
                 :key="c"
@@ -36,7 +36,7 @@
 
                 @click="setColor(c)"
               />
-            </v-layout-->
+            </v-layout>
             <v-divider class="mt-3"/>
           </v-flex>
           <v-flex
@@ -49,38 +49,14 @@
             :key="img"
             xs3
           >
-            <!--v-img
+            <v-img
               :class="[image === img ? 'image-active' : '']"
               :src="img"
               height="120"
               @click.native="setImage(img)"
-            /-->
-            <v-img
-              :src="img"
-              height="120"
             />
           </v-flex>
-          <v-flex xs12>
-            <v-btn
-              href="https://www.creative-tim.com/product/vuetify-material-dashboard"
-              target="_blank"
-              color="success"
-              block
-            >
-              Free Download
-            </v-btn>
-          </v-flex>
-          <v-flex xs12>
-            <v-btn
-              href="https://demos.creative-tim.com/vuetify-material-dashboard/documentation"
-              target="_blank"
-              class="white--text"
-              color="primary"
-              block
-            >
-              Documentation
-            </v-btn>
-          </v-flex>
+          
           <v-flex xs12>
             <div class="text-xs-center body-2 text-uppercase">
               <div class=" sidebar-filter">
@@ -159,4 +135,9 @@ export default {
   .v-responsive {
     cursor: pointer;
   }
+
+  button.elevation-0 {
+    position: absolute;
+    right: 0;
+}
 </style>

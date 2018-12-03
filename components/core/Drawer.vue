@@ -1,28 +1,30 @@
 <template>
-  <!--v-navigation-drawer
-    id="app-drawer"
-    v-model="inputValue"
-    app
-    dark
-    floating
-    persistent
-    mobile-break-point="991"
-    width="260"
-  -->
   <v-navigation-drawer
     id="app-drawer"
+    v-model="inputValue"
+    fixed
     app
     dark
     floating
     persistent
-    mobile-break-point="991"
-    width="260">
+    mobile-break-point="768"
+    width="260"
+  >
+<v-layout align-center justify-space-around>
+    <v-icon>fas fa-lock</v-icon>
 
-    <!--v-img
-      :src="image"
-      height="100%"
-    -->
+    <v-icon>fas fa-search</v-icon>
+
+    <v-icon>fas fa-list</v-icon>
+
+    <v-icon>fas fa-edit</v-icon>
+
+    <v-icon>fas fa-tachometer-alt</v-icon>
+
+    <v-icon>fas fa-circle-notch fa-spin</v-icon>
+  </v-layout>
     <v-img
+      :src="image"
       height="100%"
     >
       <v-layout
@@ -34,32 +36,45 @@
           <v-list-tile-avatar
             color="white"
           >
-            <!--v-img
+            <v-img
               :src="logo"
               height="34"
               contain
-            /-->
+            />
             <v-img
               height="34"
               contain
             />
           </v-list-tile-avatar>
           <v-list-tile-title class="title">
-            Vuetify MD
+            Covit
           </v-list-tile-title>
         </v-list-tile>
         <v-divider/>
-
-
         <v-list-tile
-          disabled
-          active-class="primary"
-          class="v-list-item v-list__tile--buy"
-          to="/upgrade"
+          v-if="responsive"
+        >
+        </v-list-tile>
+
+        <v-list-tile>
+          <v-text-field
+            class="purple-input search-input"
+            label="Search..."
+            color="purple"
+          />
+        </v-list-tile>
+        <v-list-tile
+          v-for="(link, i) in links"
+          :key="i"
+          :to="link.to"
+          :active-class="color"
+          avatar
+          class="v-list-item"
         >
           <v-list-tile-action>
-            <v-icon>mdi-package-up</v-icon>
+            <v-icon>{{ link.icon }}</v-icon>
           </v-list-tile-action>
+
           <v-expansion-panel v-if="link.children">
             <v-expansion-panel-content>
               <div slot="header">{{ link.name }}</div>
@@ -81,56 +96,149 @@
         </v-list-tile>
       </v-layout>
     </v-img>
+
+    
   </v-navigation-drawer>
 </template>
 
-<!--script>
+<script>
 // Utilities
-import {
-  mapMutations,
-  mapState
-} from 'vuex'
+import { mapMutations, mapState } from 'vuex'
 
 export default {
   data: () => ({
-    logo: './img/vuetifylogo.png',
+    logo: '',
     links: [
+        {
+          // Contabilidad
+          icon: "assessment",
+          name: "Contabilidad",
+          children: [
+            {
+              icon: "fa fa-dollar",
+              name: "Ingresos",
+              url: "/contabilidad-ingresos"
+            },{
+              icon: "fa fa-dollar",
+              name: "Egresos",
+              url: "/contabilidad-egresos"
+            },{
+              icon: "icon-puzzle",
+              name: "Multas",
+              url: "/contabilidad-multas"
+            },{
+              icon: "icon-puzzle",
+              name: "Condonaciones",
+              url: "/contabilidad-condonaciones"
+            }
+          ]
+        },{
+          // GGCC
+          icon: "payment",
+          name: "Gastos Comunes",
+          url: "/gastos-comunes"
+        },{
+          // Nómina y Remuneraciones
+          icon: "mdi-clipboard-outline",
+          name: "Nómina y Remuneraciones",
+          children: [{
+              icon: "fa fa-dollar",
+              name: "Nómina",
+              url: "/nomina"
+            },{
+              icon: "fa fa-dollar",
+              name: "Remuneraciones",
+              url: "/remuneraciones"
+            },{
+              icon: "icon-puzzle",
+              name: "Horas trabajadas",
+              url: "/horas-trabajadas"
+          }]
+        },{
+          // Proveedores y Mantenciones
+          icon: "build",
+          name: "Proveedores y Mantenciones",
+          children: [{
+              icon: "fa fa-dollar",
+              name: "Proveedores",
+              url: "/proveedores"
+            },{
+              icon: "fa fa-dollar",
+              name: "Mantenciones",
+              url: "/mantenciones"
+            }]
+        },{
+          // Residentes y Visitas
+          icon: "person_pin",
+          name: "Residentes y Visitas",
+          url: "/residentes",
+          children: [{
+              icon: "fa fa-dollar",
+              name: "Residentes",
+              url: "/residentes"
+            },{
+              icon: "fa fa-dollar",
+              name: "Visitas",
+              url: "/visitas"
+            }]
+        },{
+          // Mensajes
+          icon: "message",
+          name: "Mensajes",
+          url: "/mensajes"
+        },{
+          // Seguridad y Alertas
+          icon: "warning",
+          name: "Seguridad y Alertas",
+          url: "/seguridad-y-alertas"
+        },{
+          // Espacios Comunes
+          icon: "place",
+          name: "Espacios Comunes",
+          url: "/widgets"
+        },{
+          // Biblioteca
+          icon: "library_books",
+          name: "Biblioteca",
+          url: "/widgets"
+        },
       {
-        to: '/dashboard',
+        to: '/',
         icon: 'mdi-view-dashboard',
-        text: 'Dashboard'
+        name: 'Dashboard'
       },
       {
         to: '/user-profile',
         icon: 'mdi-account',
-        text: 'User Profile'
+        name: 'User Profile'
       },
       {
         to: '/table-list',
         icon: 'mdi-clipboard-outline',
-        text: 'Table List'
+        name: 'Table List'
       },
       {
         to: '/typography',
         icon: 'mdi-format-font',
-        text: 'Typography'
+        name: 'Typography'
       },
       {
         to: '/icons',
         icon: 'mdi-chart-bubble',
-        text: 'Icons'
+        name: 'Icons'
       },
       {
         to: '/maps',
         icon: 'mdi-map-marker',
-        text: 'Maps'
+        name: 'Maps'
       },
       {
         to: '/notifications',
         icon: 'mdi-bell',
-        text: 'Notifications'
+        name: 'Notifications'
       }
     ],
+
     responsive: false
   }),
   computed: {
@@ -165,28 +273,35 @@ export default {
     }
   }
 }
-</script-->
+</script>
 
-<!--style lang="scss">
-  #app-drawer {
-    .v-list__tile {
-      border-radius: 4px;
-
-      &--buy {
-        margin-top: auto;
-        margin-bottom: 17px;
-      }
-    }
-
-    .v-image__image--contain {
-      top: 9px;
-      height: 60%;
-    }
-
-    .search-input {
-      margin-bottom: 30px !important;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
+<style scoped>
+  aside {
+    height: auto !important;
   }
-</style-->
+  #app-drawer .v-list__tile {
+    border-radius: 4px;
+  }
+  #app-drawer .v-list__tile--buy {
+    margin-top: auto;
+    margin-bottom: 17px;
+  }
+  #app-drawer .v-image__image--contain {
+    top: 9px;
+    height: 60%;
+  }
+  #app-drawer .search-input {
+    margin-bottom: 30px !important;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .theme--dark.v-card,
+  .theme--dark.v-expansion-panel .v-expansion-panel__container {
+    background-color: transparent;
+  }
+  .v-expansion-panel {
+    box-shadow: none;
+  }
+</style>
+

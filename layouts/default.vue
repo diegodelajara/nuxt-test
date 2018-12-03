@@ -24,13 +24,22 @@
   import CoreDrawer  from '../components/core/Drawer'
   import CoreView  from '../components/core/View'
 
+  import MaterialCard  from '../components/material/Card'
+  import MaterialStatsCard  from '../components/material/StatsCard.vue'
+  import MaterialChartCard  from '../components/material/ChartCard.vue'
+  import MaterialNotification  from '../components/material/Notification.vue'
+
 
   export default {
     components: {
       CoreFilter,
       CoreToolbar,
       CoreDrawer,
-      CoreView
+      CoreView,
+      MaterialCard,
+      MaterialStatsCard,
+      MaterialChartCard,
+      MaterialNotification
     }
   }
 </script>
