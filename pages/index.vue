@@ -382,7 +382,7 @@ export default {
         data: {
           labels: ['12am', '3pm', '6pm', '9pm', '12pm', '3am', '6am', '9am'],
           chart: {
-            type: 'pie'
+            type: 'bar'
           },
           title: {
             text: 'Egresos'
