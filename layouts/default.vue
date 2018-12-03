@@ -65,4 +65,13 @@
   ol, ul {
     list-style: none;
   }
+  @media (max-width: 768px) {
+    nav#core-toolbar {
+      position: fixed;
+      z-index: 9;
+    }
+    .v-content {
+      padding-top: 65px !important;
+    }    
+  }
 </style>
