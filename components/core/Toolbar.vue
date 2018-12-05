@@ -19,8 +19,19 @@
         >
           <v-icon>mdi-view-list</v-icon>
         </v-btn>
-        {{ title }}
       </v-toolbar-title>
+    </div>
+
+    <v-spacer />
+    
+    <div class="logo">
+        <router-link
+          v-ripple
+          class="toolbar-items"
+          to="/"
+        >
+          <img src="../../assets/images/logo.png" alt="logo">
+        </router-link>
     </div>
 
     <v-spacer />
@@ -37,13 +48,6 @@
           hide-details
           color="purple"
         />
-        <router-link
-          v-ripple
-          class="toolbar-items"
-          to="/"
-        >
-          <v-icon color="tertiary">mdi-view-dashboard</v-icon>
-        </router-link>
         <v-menu
           bottom
           left
@@ -63,7 +67,7 @@
               <template slot="badge">
                 {{ notifications.length }}
               </template>
-              <v-icon color="tertiary">mdi-bell</v-icon>
+              <v-icon color="tertiary">mdi-account</v-icon>
             </v-badge>
           </router-link>
           <v-card>
@@ -80,13 +84,6 @@
             </v-list>
           </v-card>
         </v-menu>
-        <router-link
-          v-ripple
-          class="toolbar-items"
-          to="/user-profile"
-        >
-          <v-icon color="tertiary">mdi-account</v-icon>
-        </router-link>
       </v-flex>
     </v-toolbar-items>
   </v-toolbar>
@@ -147,8 +144,17 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   #core-toolbar a {
     text-decoration: none;
+  }
+  .logo {
+    width: 100%;
+    max-width: 130px;
+    text-align: center;
+  }
+  .logo img {width: 100%;}
+  @media (min-width: 768px) {
+    .logo { display: none; }
   }
 </style>
