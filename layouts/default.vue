@@ -74,7 +74,8 @@ ul {
   }
 }
 @media (min-width: 768px) {
-  .v-responsive.v-image {
+  .v-image__image.v-image__image--contain {
+    background-size: 200px;
   }
 }
 </style>

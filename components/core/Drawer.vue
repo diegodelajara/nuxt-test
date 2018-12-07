@@ -25,7 +25,7 @@
     </v-layout>
     <v-img :src="image" height="100%">
       <v-layout class="fill-height" tag="v-list" column>
-        <v-img :src="logo" height="34" contain/>
+        <v-img :src="logo" height="70" contain/>
         <!--v-divider/-->
         <v-list-tile v-if="responsive"></v-list-tile>
 
