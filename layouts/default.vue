@@ -64,6 +64,9 @@ ol,
 ul {
   list-style: none;
 }
+.v-list-item {
+    margin: 0 5px !important;
+}
 @media (max-width: 768px) {
   nav#core-toolbar {
     position: fixed;
