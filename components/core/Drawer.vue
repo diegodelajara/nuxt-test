@@ -53,16 +53,18 @@
               <div slot="header">{{ link.name }}</div>
               <v-card>
                 <v-card-text>
-                  <ul>
-                    <li v-for="(child, i) in link.children" :key="i">{{ child.name }}</li>
-                  </ul>
+                  <v-list-tile
+                    v-for="(child, i) in link.children"
+                    :key="i"
+                    :to="child.url"
+                  >{{ child.name }}</v-list-tile>
                 </v-card-text>
               </v-card>
             </v-expansion-panel-content>
           </v-expansion-panel>
 
           <div v-else>
-            <div class="no-expansion-item" slot="header">{{ link.name }}</div>
+            <v-list-tile :to="link.url">{{ link.name }}</v-list-tile>
           </div>
         </v-list-tile>
       </v-layout>
@@ -86,7 +88,7 @@ export default {
           {
             icon: "fa fa-dollar",
             name: "Ingresos",
-            url: "/contabilidad-ingresos"
+            url: "/contabilidad/ingresos"
           },
           {
             icon: "fa fa-dollar",
